@@ -1,0 +1,7 @@
+Place your zyp-logo.png file in this directory (public/zyp-logo.png).
+
+The logo is referenced in:
+- index.html  (favicon and JSON-LD schema)
+- src/assets/zyp-logo.png.asset.json  (used by Navbar and Footer components)
+
+Both point to /zyp-logo.png which resolves from this public/ folder.
