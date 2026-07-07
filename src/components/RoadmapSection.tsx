@@ -61,7 +61,7 @@ export function RoadmapSection() {
           transition={{ duration: 0.5 }}
           className="mx-auto mb-12 max-w-2xl text-center"
         >
-          <span className="text-primary text-sm font-semibold uppercase tracking-wider">Roadmap</span>
+          <span className="text-primary text-xl font-bold uppercase tracking-[0.2em]">Roadmap</span>
           <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-5 text-foreground">
             What's Coming Next
           </h2>

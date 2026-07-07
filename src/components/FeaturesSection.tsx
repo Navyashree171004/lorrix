@@ -1,3 +1,9 @@
+import ewayBillsImg from "@/assets/features/eway-bills.png";
+import lrGenerationImg from "@/assets/features/lr-generation.png";
+import realtimeImg from "@/assets/features/realtime-updates.png";
+import safetyImg from "@/assets/features/operational-safety.png";
+import tripImg from "@/assets/features/trip-management.png";
+import aiImg from "@/assets/features/ai-architecture.png";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FileText, Route, Zap, Shield, BarChart3, Cpu } from "lucide-react";
@@ -7,6 +13,7 @@ const features = [
     icon: FileText,
     title: "E-Way Bill Management",
     description: "Store, search, and select E-Way Bills for seamless operations. Import from GST portal or add manually.",
+    image: ewayBillsImg,
     iconBg: "bg-primary/10",
     iconColor: "text-primary",
   },
@@ -14,6 +21,7 @@ const features = [
     icon: Route,
     title: "Loading Receipt Generation",
     description: "Create single or multi-bill LRs instantly with automated data population and validation.",
+    image: lrGenerationImg,
     iconBg: "bg-emerald-500/10",
     iconColor: "text-emerald-600",
   },
@@ -21,6 +29,7 @@ const features = [
     icon: Zap,
     title: "Real-Time Updates",
     description: "Live backend progress and status via server-sent events. Never miss a status change.",
+    image: realtimeImg,
     iconBg: "bg-amber-500/10",
     iconColor: "text-amber-600",
   },
@@ -28,6 +37,7 @@ const features = [
     icon: Shield,
     title: "Operational Safety",
     description: "Prevent duplicate bills and invalid assignments with intelligent validation rules.",
+    image: safetyImg,
     iconBg: "bg-rose-500/10",
     iconColor: "text-rose-600",
   },
@@ -35,6 +45,7 @@ const features = [
     icon: BarChart3,
     title: "Trip Management",
     description: "Create trips, assign multiple LRs, and manage unassigned receipts from a unified dashboard.",
+    image: tripImg,
     iconBg: "bg-violet-500/10",
     iconColor: "text-violet-600",
   },
@@ -42,6 +53,7 @@ const features = [
     icon: Cpu,
     title: "AI-Ready Architecture",
     description: "Built for intelligence. Ready for automated anomaly detection and smart workflow optimization.",
+    image: aiImg,
     iconBg: "bg-cyan-500/10",
     iconColor: "text-cyan-600",
   },
@@ -60,24 +72,14 @@ export function FeaturesSection() {
   }, []);
 
   return (
-    <section id="features" className="relative flex min-h-screen scroll-mt-20 items-center bg-background py-10 lg:scroll-mt-20 lg:py-12">
-      <div className="container mx-auto px-4 sm:px-6">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mx-auto mb-5 max-w-2xl text-center"
-        >
-          <span className="text-xs font-semibold uppercase tracking-wider text-primary">Features</span>
-          <h2 className="mt-2 text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
-            Everything You Need for Modern Logistics
-          </h2>
-        </motion.div>
+    <section
+  id="features"
+  className="relative flex min-h-[88vh] scroll-mt-24 items-start overflow-hidden bg-background pt-2 pb-6 lg:pt-4 lg:pb-8"
+>
 
-        <div className="mx-auto grid max-w-6xl gap-5 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
-          <div className="grid gap-2">
+  <div className="container relative z-10 mx-auto px-4 sm:px-6">
+    <div className="mx-auto grid max-w-[1550px] items-start gap-20 lg:grid-cols-[1.1fr_1.3fr]">
+      <div className="mt-8 grid w-full gap-3 lg:pl-8">
             {features.map((feature, index) => {
               const isActive = index === activeIndex;
 
@@ -86,9 +88,9 @@ export function FeaturesSection() {
                   key={feature.title}
                   type="button"
                   onClick={() => setActiveIndex(index)}
-                  className={`group flex items-center gap-3 rounded-lg border p-2.5 text-left transition-all duration-300 ${
+                  className={`group flex items-center gap-3 rounded-lg border p-2 text-left transition-all duration-300 ${
                     isActive
-                      ? "border-primary/30 bg-primary/5 shadow-card"
+                      ? "border-primary bg-primary/10 shadow-xl scale-[1.02]"
                       : "border-border bg-card/70 hover:border-primary/20 hover:bg-card"
                   }`}
                 >
@@ -107,8 +109,10 @@ export function FeaturesSection() {
               );
             })}
           </div>
+          <div className="flex flex-col items-center lg:ml-10">
+  <h2 className="mb-8 text-center text-6xl font-extrabold tracking-tight bg-gradient-to-r from-slate-900 via-primary to-slate-700 bg-clip-text text-transparent lg:text-7xl">Features</h2>
 
-          <div className="relative min-h-80 overflow-hidden rounded-xl border bg-card shadow-elevated sm:min-h-[330px]">
+  <div className="relative h-[520px] w-full max-w-[820px] overflow-hidden rounded-2xl border bg-card shadow-elevated">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeFeature.title}
@@ -118,14 +122,16 @@ export function FeaturesSection() {
                 transition={{ duration: 0.45, ease: "easeOut" }}
                 className="absolute inset-0 grid grid-rows-[1fr_auto]"
               >
-                <div className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-primary/5 to-accent p-5 sm:p-8">
+                <div className="relative flex items-center justify-center overflow-hidden rounded-t-2xl bg-gradient-to-br from-blue-50 via-blue-100 to-slate-100 p-4 sm:p-5">
                   <div className="absolute inset-0 grid-pattern opacity-30" />
-                  <div className="relative flex h-full min-h-40 w-full items-center justify-center rounded-lg border border-dashed border-primary/25 bg-white/70 sm:min-h-48">
-                    <div className={`flex h-20 w-20 items-center justify-center rounded-2xl ${activeFeature.iconBg}`}>
-                      <activeFeature.icon className={`h-10 w-10 ${activeFeature.iconColor}`} />
+                  <div className="relative h-full w-full overflow-hidden rounded-2xl border border-primary/10 bg-white">
+                     <img
+                       src={activeFeature.image}
+                        alt={activeFeature.title}
+                        className="h-full w-[104%] max-w-none object-contain object-left"
+                    />
                     </div>
-                  </div>
-                </div>
+                    </div>
 
                 <div className="border-t bg-card p-4 sm:p-6">
                   <div className="flex items-start gap-3 sm:gap-4">
@@ -161,6 +167,7 @@ export function FeaturesSection() {
           </div>
         </div>
       </div>
+    </div>
     </section>
   );
 }

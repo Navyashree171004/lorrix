@@ -28,11 +28,11 @@ export function Navbar() {
             <img
               src={zypLogo.url}
               alt="ZYP Logistech logo"
-              className="h-14 w-14 object-contain"
+              className="h-16 w-16 object-contain drop-shadow-md transition-transform duration-300 hover:scale-110"
             />
             <div className="flex flex-col leading-tight">
               <span className="text-2xl font-extrabold text-foreground">Lorrix</span>
-              <span className="hidden text-[11px] font-bold uppercase tracking-wider text-muted-foreground sm:block">
+              <span className="hidden text-base font-bold uppercase tracking-wider text-muted-foreground sm:block">
                 by ZYP Logistech
               </span>
             </div>
@@ -44,7 +44,7 @@ export function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium"
+                className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-lg font-medium"
               >
                 {link.name}
               </a>

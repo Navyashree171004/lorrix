@@ -82,7 +82,7 @@ try {
   };
 
   return (
-    <section id="demo" className="relative flex min-h-screen scroll-mt-24 items-center overflow-hidden bg-secondary py-10 lg:scroll-mt-20 lg:py-12">
+    <section id="demo" className="relative scroll-mt-24 overflow-hidden bg-secondary pt-10 pb-2 lg:pt-12 lg:pb-4">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 grid-pattern" />
@@ -129,7 +129,7 @@ try {
           </div>
         </motion.div>
 
-        <div className="mx-auto grid max-w-5xl items-center gap-6 rounded-xl border border-border bg-card p-5 shadow-elevated sm:p-6 lg:grid-cols-5 lg:gap-8 lg:rounded-2xl xl:p-8">
+        <div className="mx-auto grid max-w-6xl items-center gap-8 rounded-2xl border border-border bg-card p-6 shadow-elevated sm:p-8 lg:grid-cols-5 lg:gap-10 xl:p-10">
           {/* Left */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

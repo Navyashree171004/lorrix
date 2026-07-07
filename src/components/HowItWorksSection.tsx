@@ -42,9 +42,9 @@ export function HowItWorksSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mx-auto mb-12 max-w-2xl text-center"
+          className="-mt-10 mx-auto mb-8 max-w-4xl text-center"
         >
-          <span className="text-blue-100 text-sm font-semibold uppercase tracking-wider">How It Works</span>
+          <span className="text-lg font-bold uppercase tracking-[0.2em] text-primary">How It Works</span>
           <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-5 text-white">
             Simple Process, Powerful Results
           </h2>
