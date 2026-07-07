@@ -50,28 +50,28 @@ const roadmapItems = [
 
 export function RoadmapSection() {
   return (
-    <section id="roadmap" className="relative overflow-hidden bg-gradient-to-r from-blue-50 via-sky-50 to-white py-24">
+    <section id="roadmap" className="relative flex min-h-screen scroll-mt-24 items-center overflow-hidden bg-gradient-to-r from-blue-50 via-sky-50 to-white py-16 lg:scroll-mt-20 lg:py-20">
       <div className="absolute inset-0 grid-pattern opacity-30" />
-      <div className="container relative z-10 mx-auto px-6">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          className="mx-auto mb-12 max-w-2xl text-center"
         >
           <span className="text-primary text-sm font-semibold uppercase tracking-wider">Roadmap</span>
           <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-5 text-foreground">
             What's Coming Next
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-base leading-7 text-muted-foreground sm:text-lg">
             We're building the future of intelligent logistics. Here's our journey ahead.
           </p>
         </motion.div>
 
         {/* Roadmap Timeline */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4 xl:gap-6">
           {roadmapItems.map((item, index) => (
             <motion.div
               key={item.phase}
@@ -81,7 +81,7 @@ export function RoadmapSection() {
               transition={{ duration: 0.4, delay: index * 0.08 }}
               className="relative [perspective:1000px]"
             >
-              <div className={`relative h-full rounded-xl border p-6 shadow-[0_18px_45px_-28px_hsl(218_24%_12%/0.5)] ring-1 ring-white/70 transition-all duration-500 ease-out hover:-translate-y-3 hover:scale-[1.025] hover:shadow-[0_32px_80px_-34px_hsl(218_24%_12%/0.65)] ${
+              <div className={`relative h-full rounded-xl border p-5 shadow-[0_18px_45px_-28px_hsl(218_24%_12%/0.5)] ring-1 ring-white/70 transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_32px_80px_-34px_hsl(218_24%_12%/0.65)] xl:p-6 ${
                 item.status === "completed" 
                   ? "bg-white/90 border-green-200" 
                   : item.status === "current"

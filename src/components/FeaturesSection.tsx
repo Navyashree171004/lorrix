@@ -60,8 +60,8 @@ export function FeaturesSection() {
   }, []);
 
   return (
-    <section id="features" className="relative scroll-mt-14 bg-background pb-10 pt-10 lg:pb-12 lg:pt-10">
-      <div className="container mx-auto px-6">
+    <section id="features" className="relative flex min-h-screen scroll-mt-20 items-center bg-background py-10 lg:scroll-mt-20 lg:py-12">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -71,12 +71,12 @@ export function FeaturesSection() {
           className="mx-auto mb-5 max-w-2xl text-center"
         >
           <span className="text-xs font-semibold uppercase tracking-wider text-primary">Features</span>
-          <h2 className="mt-2 text-3xl font-bold text-foreground md:text-4xl">
+          <h2 className="mt-2 text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
             Everything You Need for Modern Logistics
           </h2>
         </motion.div>
 
-        <div className="mx-auto grid max-w-6xl gap-5 lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="mx-auto grid max-w-6xl gap-5 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
           <div className="grid gap-2">
             {features.map((feature, index) => {
               const isActive = index === activeIndex;
@@ -86,7 +86,7 @@ export function FeaturesSection() {
                   key={feature.title}
                   type="button"
                   onClick={() => setActiveIndex(index)}
-                  className={`group flex items-center gap-3 rounded-lg border p-3 text-left transition-all duration-300 ${
+                  className={`group flex items-center gap-3 rounded-lg border p-2.5 text-left transition-all duration-300 ${
                     isActive
                       ? "border-primary/30 bg-primary/5 shadow-card"
                       : "border-border bg-card/70 hover:border-primary/20 hover:bg-card"
@@ -96,10 +96,10 @@ export function FeaturesSection() {
                     <feature.icon className={`h-4 w-4 ${feature.iconColor}`} />
                   </span>
                   <span>
-                    <span className="block text-sm font-semibold text-foreground">
+                    <span className="block text-base font-semibold text-foreground">
                       {feature.title}
                     </span>
-                    <span className="mt-0.5 block text-xs leading-5 text-muted-foreground">
+                    <span className="mt-1 hidden text-sm leading-6 text-muted-foreground md:block lg:hidden xl:block">
                       {feature.description}
                     </span>
                   </span>
@@ -108,7 +108,7 @@ export function FeaturesSection() {
             })}
           </div>
 
-          <div className="relative min-h-[330px] overflow-hidden rounded-xl border bg-card shadow-elevated">
+          <div className="relative min-h-80 overflow-hidden rounded-xl border bg-card shadow-elevated sm:min-h-[330px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeFeature.title}
@@ -118,25 +118,25 @@ export function FeaturesSection() {
                 transition={{ duration: 0.45, ease: "easeOut" }}
                 className="absolute inset-0 grid grid-rows-[1fr_auto]"
               >
-                <div className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-primary/5 to-accent p-8">
+                <div className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-primary/5 to-accent p-5 sm:p-8">
                   <div className="absolute inset-0 grid-pattern opacity-30" />
-                  <div className="relative flex h-full min-h-48 w-full items-center justify-center rounded-lg border border-dashed border-primary/25 bg-white/70">
+                  <div className="relative flex h-full min-h-40 w-full items-center justify-center rounded-lg border border-dashed border-primary/25 bg-white/70 sm:min-h-48">
                     <div className={`flex h-20 w-20 items-center justify-center rounded-2xl ${activeFeature.iconBg}`}>
                       <activeFeature.icon className={`h-10 w-10 ${activeFeature.iconColor}`} />
                     </div>
                   </div>
                 </div>
 
-                <div className="border-t bg-card p-6">
-                  <div className="flex items-start gap-4">
+                <div className="border-t bg-card p-4 sm:p-6">
+                  <div className="flex items-start gap-3 sm:gap-4">
                     <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-lg ${activeFeature.iconBg}`}>
                       <activeFeature.icon className={`h-6 w-6 ${activeFeature.iconColor}`} />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-foreground">
+                      <h3 className="text-2xl font-semibold text-foreground">
                         {activeFeature.title}
                       </h3>
-                      <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                      <p className="mt-2 text-base leading-7 text-muted-foreground">
                         {activeFeature.description}
                       </p>
                     </div>

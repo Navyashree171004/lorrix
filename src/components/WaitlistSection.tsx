@@ -82,26 +82,26 @@ try {
   };
 
   return (
-    <section id="demo" className="py-24 bg-secondary relative overflow-hidden">
+    <section id="demo" className="relative flex min-h-screen scroll-mt-24 items-center overflow-hidden bg-secondary py-10 lg:scroll-mt-20 lg:py-12">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 grid-pattern" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="max-w-2xl mx-auto text-center mb-12"
+          className="mx-auto mb-6 max-w-2xl text-center"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 text-secondary-foreground">
+          <h2 className="mb-4 text-3xl font-bold text-secondary-foreground md:text-4xl">
             Ready to Transform Your{" "}
             <span className="text-gradient">Logistics Operations?</span>
           </h2>
-          <p className="text-secondary-foreground/70 text-lg">
+          <p className="text-base leading-7 text-secondary-foreground/70 sm:text-lg">
             Join forward-thinking transporters already saving time and reducing errors with Lorrix.
             Request a demo and get early access today.
           </p>
@@ -113,7 +113,7 @@ try {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="max-w-3xl mx-auto mb-10 grid sm:grid-cols-3 gap-6"
+          className="mx-auto mb-6 grid max-w-3xl gap-4 sm:grid-cols-3"
         >
           <div className="flex items-center justify-center gap-2 text-secondary-foreground/80">
             <Mail className="w-4 h-4 text-primary" />
@@ -129,7 +129,7 @@ try {
           </div>
         </motion.div>
 
-        <div className="max-w-5xl mx-auto grid lg:grid-cols-5 gap-10 items-center bg-card border border-border rounded-2xl shadow-elevated p-8 md:p-12">
+        <div className="mx-auto grid max-w-5xl items-center gap-6 rounded-xl border border-border bg-card p-5 shadow-elevated sm:p-6 lg:grid-cols-5 lg:gap-8 lg:rounded-2xl xl:p-8">
           {/* Left */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -141,10 +141,10 @@ try {
             <span className="text-primary text-sm font-semibold uppercase tracking-wider">
               Request a Demo
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4 text-foreground leading-tight">
+            <h2 className="mt-3 mb-3 text-2xl font-bold leading-tight text-foreground md:text-3xl">
               Get early access to <span className="text-gradient">Lorrix</span>
             </h2>
-            <p className="text-muted-foreground mb-6">
+            <p className="mb-5 text-sm leading-6 text-muted-foreground">
               Get early access, a personalized demo, and onboarding support for your fleet.
             </p>
             <ul className="space-y-3">

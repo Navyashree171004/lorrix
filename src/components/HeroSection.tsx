@@ -19,28 +19,28 @@ const metrics = [
 
 export function HeroSection() {
   return (
-    <section id="hero" className="relative overflow-hidden bg-background pt-[5.25rem]">
+    <section id="hero" className="relative overflow-hidden bg-background pt-24 md:pt-[5.25rem]">
       <div className="absolute inset-0 grid-pattern opacity-40" />
       <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-primary/10 to-transparent" />
 
-      <div className="container relative z-10 mx-auto px-6">
-        <div className="grid min-h-[calc(100svh-5rem)] items-start gap-10 pb-8 pt-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14 lg:pt-10">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6">
+        <div className="grid items-start gap-8 pb-8 pt-10 lg:min-h-[calc(100svh-5rem)] lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-12 lg:pt-16 xl:gap-14">
           <div className="flex flex-col lg:min-h-[calc(52vh+9rem)]">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="max-w-2xl text-4xl font-bold leading-[1.24] text-foreground md:text-5xl xl:text-6xl"
+              className="max-w-2xl text-4xl font-bold leading-[1.2] text-foreground sm:text-5xl xl:text-6xl xl:leading-[1.22]"
             >
               One platform for every logistics operation
             </motion.h1>
 
-            <div className="mt-10 flex flex-col lg:mt-auto lg:pt-8">
+            <div className="mt-8 flex flex-col lg:mt-auto lg:pt-8">
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="max-w-xl text-base leading-9 text-muted-foreground xl:text-lg xl:leading-10"
+                className="max-w-xl text-base leading-8 text-muted-foreground xl:text-lg xl:leading-9"
               >
                 Automate documentation, streamline dispatch planning, and gain complete
                 visibility into your logistics operations through one intelligent platform.
@@ -50,7 +50,7 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="mt-8 grid gap-5 text-sm leading-7 text-foreground"
+                className="mt-7 grid gap-4 text-sm leading-7 text-foreground"
               >
                 {highlights.map((item) => (
                   <li key={item} className="flex items-center gap-2">
@@ -80,8 +80,8 @@ export function HeroSection() {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35 }}
             className="relative flex flex-col gap-5"
           >
@@ -103,14 +103,14 @@ export function HeroSection() {
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
               {metrics.map((metric, index) => (
                 <motion.div
                   key={metric.label}
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.45 + index * 0.08 }}
-                  className="rounded-xl border border-border bg-card p-4 text-center shadow-card transition-all duration-300 hover:shadow-elevated xl:p-5"
+                  className="rounded-xl border border-border bg-card p-3 text-center shadow-card transition-all duration-300 hover:shadow-elevated sm:p-4 xl:p-5"
                 >
                   <p className="text-3xl font-bold text-primary xl:text-4xl">{metric.value}</p>
                   <p className="mt-1.5 text-xs font-medium leading-5 text-muted-foreground xl:text-sm">

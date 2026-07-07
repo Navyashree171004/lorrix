@@ -9,7 +9,7 @@ export function Footer() {
       transition={{ duration: 0.5 }}
       className="border-t border-secondary bg-secondary py-6"
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-secondary-foreground/70">
             <a href="#features" className="hover:text-secondary-foreground transition-colors">Features</a>
