@@ -7,7 +7,6 @@ import zypLogo from "@/assets/zyp-logo.png.asset.json";
 const navLinks = [
   { name: "Features", href: "#features" },
   { name: "How It Works", href: "#how-it-works" },
-  { name: "Roadmap", href: "#roadmap" },
   { name: "Contact", href: "#demo" },
 ];
 

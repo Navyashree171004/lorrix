@@ -14,7 +14,6 @@ export function Footer() {
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-secondary-foreground/70">
             <a href="#features" className="hover:text-secondary-foreground transition-colors">Features</a>
             <a href="#how-it-works" className="hover:text-secondary-foreground transition-colors">How It Works</a>
-            <a href="#roadmap" className="hover:text-secondary-foreground transition-colors">Roadmap</a>
             <a href="#demo" className="hover:text-secondary-foreground transition-colors">Contact</a>
           </div>
 
